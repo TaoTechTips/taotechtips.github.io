@@ -81,7 +81,7 @@ which other apps can't read.</p>
 "Satchel", tapping the Save copied widget, or importing a backup file. Satchel doesn't capture
 anything automatically.</p>
 
-<h2>Direct paste (optional)</h2>
+<h2>Direct paste</h2>
 <p>Direct paste uses Android's accessibility service to put a snippet straight into the text box
 you're typing in. It's off until you turn it on, and Satchel explains it and asks you first.</p>
 <p>When you tap a snippet in the bubble, and only then, Satchel finds the text box you're typing in
@@ -113,6 +113,10 @@ can deal with refunds. It doesn't give me your payment details.</p>
 <h2>The clipboard</h2>
 <ul>
   <li>When you copy or paste a snippet, Satchel puts it on your clipboard.</li>
+  <li>After a direct paste, Satchel clears the snippet from Android's clipboard again. A keyboard
+    that keeps its own clipboard history, such as Samsung Keyboard, may still show it. If the
+    paste didn't work, or you chose Copy, the snippet stays on the clipboard for you to
+    paste.</li>
   <li>Satchel reads the clipboard only when you tap the Save copied widget, to save what you copied.
     Android shows a notice when this happens.</li>
   <li>If something was copied as sensitive, such as a password from a password manager, Satchel
@@ -122,6 +126,8 @@ can deal with refunds. It doesn't give me your payment details.</p>
 <h2>What others can see</h2>
 <p>The bubble and the home-screen widgets show your snippets on screen. Widgets show their titles
 and the start of their text. Anyone who can see your screen can see them.</p>
+<p>Settings → Privacy and backup can keep Satchel and the bubble's list out of screenshots, screen
+recordings and the Recents screen. Widgets still show on your home screen.</p>
 
 <h2>Permissions</h2>
 <ul>
@@ -143,11 +149,11 @@ apps chosen for each folder and the count of what you pasted where), and may cop
 phone when you set one up. This backup is made by Android and kept in your Google account under
 Google's terms. On Android 9 and later, when your phone has a screen lock, it's end-to-end
 encrypted. I can't access it. You can turn it off in your phone's backup settings.</p>
-<p><strong>Files you export.</strong> Settings → Backup → Export saves your snippets to a file in a
-place you choose, such as your Downloads folder or Google Drive. You can protect the file with a
+<p><strong>Files you export.</strong> Settings → Privacy and backup → Export saves your snippets to
+a file in a place you choose, such as your Downloads folder or Google Drive. You can protect the file with a
 password. If you forget the password, the file can't be opened, and I can't recover it. A file
-without a password can be read by anyone who can open it. The file includes the apps you chose for
-each folder. It doesn't include the count of what you pasted where.</p>
+without a password can be read by anyone who can open it. The file includes the order you put your folders in and the apps you
+chose for each folder. It doesn't include the count of what you pasted where.</p>
 <p><strong>Folders you share.</strong> With Satchel Pro, "Share as file" on a folder makes a file of
 that folder's snippets (their text, titles, tags and dates) and hands it to the app you pick, such
 as your email or chat app. It has no password: anyone who gets the file can read it. Your pins,

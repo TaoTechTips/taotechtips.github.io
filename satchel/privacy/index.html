@@ -77,9 +77,10 @@ which other apps can't read.</p>
 </ul>
 
 <h2>How text gets into Satchel</h2>
-<p>Only when you put it there: by typing it, sharing text to Satchel, selecting text and tapping
-"Save to Satchel", tapping the Save copied widget, or importing a backup file. Satchel doesn't capture
-anything automatically.</p>
+<p>When you put it there: by typing it, sharing text to Satchel, selecting text and tapping
+"Save to Satchel", tapping the Save copied widget, or importing a backup file. With Satchel Pro you
+can also turn on auto-save, which saves text you copy in other apps (see "Auto-save copied text"
+below). Apart from auto-save, Satchel doesn't capture anything automatically.</p>
 
 <h2>Direct paste</h2>
 <p>Direct paste uses Android's accessibility service to put a snippet straight into the text box
@@ -93,6 +94,24 @@ reads the app's name (its package name, such as <code>com.android.chrome</code>)
 about the app. That lets the bubble open the folder you chose for that app and show the snippets
 you paste there most. The only thing kept is the count described under "What Satchel stores".</p>
 <p>You can turn direct paste off at any time in Android's Accessibility settings.</p>
+
+<h2>Auto-save copied text</h2>
+<p>Auto-save (Satchel Pro) saves text you copy in other apps as a new snippet. It's off until you
+turn it on, and Satchel explains it and asks you first. It uses a second accessibility service of
+its own, separate from direct paste's.</p>
+<p>While auto-save is on, Satchel watches all your apps for signs that something was copied: a tap
+on Copy or Cut, Android's "copied" preview, and short on-screen messages or announcements that say
+something was copied. To spot them, it reads the label of what you tap (never what's typed in a text
+field) and the words of those messages, only to look for those words, and keeps none of them. It
+never reads your notifications, doesn't read anything else on your screen, and doesn't watch what
+you type.</p>
+<p>Only after such a sign does Satchel read the clipboard. It saves the copied text as a snippet on
+your phone, in the folder you chose, and shows a message that lets you undo it. On Android 12 and
+later, Android shows its own notice each time Satchel reads the clipboard. It doesn't save
+text an app marks as sensitive, text copied in your password manager (your autofill service), or
+text that's already in Satchel. Nothing it reads is sent anywhere.</p>
+<p>Switch auto-save off in Satchel's settings or in the bubble and Satchel watches nothing. You can
+remove its permission at any time in Android's Accessibility settings.</p>
 
 <h2>The apps on your phone</h2>
 <p>When you choose apps for a folder (Satchel Pro), Satchel shows a list of the apps on your phone
@@ -117,10 +136,12 @@ can deal with refunds. It doesn't give me your payment details.</p>
     that keeps its own clipboard history, such as Samsung Keyboard, may still show it. If the
     paste didn't work, or you chose Copy, the snippet stays on the clipboard for you to
     paste.</li>
-  <li>Satchel reads the clipboard only when you tap the Save copied widget, to save what you copied.
-    Android shows a notice when this happens.</li>
+  <li>Satchel reads the clipboard only when you tap the Save copied widget, or, with auto-save on,
+    after it notices a copy, to save what you copied. On Android 12 and later, Android shows a
+    notice when this happens.</li>
   <li>If something was copied as sensitive, such as a password from a password manager, Satchel
-    doesn't save it.</li>
+    doesn't save it. Auto-save also never saves what is copied in your password manager (your
+    autofill service).</li>
 </ul>
 
 <h2>What others can see</h2>
@@ -134,7 +155,8 @@ recordings and the Recents screen. Widgets still show on your home screen.</p>
   <li><strong>Display over other apps:</strong> shows the bubble.</li>
   <li><strong>Notifications and foreground service:</strong> keep the bubble running and show its
     notification.</li>
-  <li><strong>Accessibility:</strong> direct paste, only if you turn it on.</li>
+  <li><strong>Accessibility:</strong> direct paste and auto-save, each a service of its own, and
+    each only if you turn it on.</li>
   <li><strong>Google Play billing:</strong> lets you buy Satchel Pro through the Play Store.</li>
   <li><strong>View network state:</strong> added by Google Play's billing library, which uses it to
     see whether your phone is online. It doesn't let Satchel connect to anything.</li>
